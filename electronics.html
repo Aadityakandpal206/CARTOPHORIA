@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartophoria</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="js/script.js"></script>
+
+</head>
+<body data-cat="electronics">
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="Cartophoria logo">
+        <span class="logo-title">Cartophoria</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="policy.html"><i class="fa-solid fa-shield-halved"></i> Policy</a>
+        <a href="help.html"><i class="fa-solid fa-life-ring"></i> Help</a>
+        <a href="social.html"><i class="fa-brands fa-hashtag"></i> Social</a>
+      </nav>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search products...">
+        <button id="themeToggle" class="icon-btn" onclick="toggleTheme()" title="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+        <section class="hero">
+      <span class="badge">ELECTRONICS</span>
+      <h1>Shop Electronics</h1>
+      <p>Use the filters to refine by rating, price, and brand. Search stays in the header.</p>
+    </section>
+    <section class="grid sidebar-layout">
+          <aside class="sidebar">
+      <h3><i class="fa-solid fa-sliders"></i> Filters</h3>
+      <div class="filter-group">
+        <strong>Star rating</strong>
+        <label><input type="radio" name="stars" value="0" checked> Any</label>
+        <label><input type="radio" name="stars" value="4"> 4★ & up</label>
+        <label><input type="radio" name="stars" value="3"> 3★ & up</label>
+      </div>
+      <div class="filter-group">
+        <strong>Price (₹)</strong>
+        <label>Min <input id="priceMin" type="number" class="range" placeholder="0"></label>
+        <label>Max <input id="priceMax" type="number" class="range" placeholder="100000"></label>
+      </div>
+      <div class="filter-group">
+        <strong>Brand</strong>
+        <label><input type="checkbox" class="filter-brand" value="NovaTech"> NovaTech</label><label><input type="checkbox" class="filter-brand" value="SoundHive"> SoundHive</label><label><input type="checkbox" class="filter-brand" value="ViewMax"> ViewMax</label><label><input type="checkbox" class="filter-brand" value="VoltGear"> VoltGear</label>
+      </div>
+      <div class="filter-group" style="display:flex; gap:10px;">
+        <button id="applyFilters" class="btn"><i class="fa-solid fa-filter"></i> Apply</button>
+        <button id="clearFilters" class="btn secondary">Clear</button>
+      </div>
+    </aside>
+    
+      <div>
+        <section id="categoryProducts" class="grid products"></section>
+      </div>
+    </section>
+    
+  </main>
+  <div class="modal" id="reviewModal" aria-hidden="true">
+    <div class="modal-card">
+      <span class="close"><i class="fa-solid fa-xmark"></i></span>
+      <h3><i class="fa-regular fa-star"></i> Reviews <small class="meta">( <span id="reviewCount">0</span> )</small></h3>
+      <form id="reviewForm" class="grid" style="grid-template-columns: 1fr 1fr; gap:12px; margin:10px 0;">
+        <input id="revName" type="text" placeholder="Your name" required>
+        <input id="revEmail" type="email" placeholder="Your email" required>
+        <div class="stars" style="grid-column: 1 / -1;">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <textarea id="revComment" rows="3" placeholder="Write your review..." required style="grid-column: 1 / -1;"></textarea>
+        <button class="btn" type="submit" style="grid-column: 1 / -1;"><i class="fa-solid fa-paper-plane"></i> Submit Review</button>
+      </form>
+      <div class="reviews" id="reviewList"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="yr"></span> Cartophoria • Built with HTML, CSS & JS only • No cart/checkout.</div>
+    </div>
+    <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

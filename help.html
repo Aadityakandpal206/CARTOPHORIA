@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartophoria</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="js/script.js"></script>
+
+</head>
+<body >
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="Cartophoria logo">
+        <span class="logo-title">Cartophoria</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="policy.html"><i class="fa-solid fa-shield-halved"></i> Policy</a>
+        <a href="help.html"><i class="fa-solid fa-life-ring"></i> Help</a>
+        <a href="social.html"><i class="fa-brands fa-hashtag"></i> Social</a>
+      </nav>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search products...">
+        <button id="themeToggle" class="icon-btn" onclick="toggleTheme()" title="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+  <span class="badge">HELP</span>
+  <h1>Need support?</h1>
+  <p>Reach us on your preferred channel. Buttons open your dialer, email, or the relevant app/site.</p>
+</section>
+<section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+  <a class="card" style="padding:18px; text-align:center;" href="https://wa.me/911234567890" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp" style="font-size:30px;"></i>
+    <div class="title">WhatsApp</div>
+    <p class="meta">Chat with us</p>
+  </a>
+  <a class="card" style="padding:18px; text-align:center;" href="tel:+911234567890">
+    <i class="fa-solid fa-phone" style="font-size:30px;"></i>
+    <div class="title">Call Support</div>
+    <p class="meta">Tap to dial</p>
+  </a>
+  <a class="card" style="padding:18px; text-align:center;" href="mailto:support@cartophoria.demo">
+    <i class="fa-solid fa-envelope" style="font-size:30px;"></i>
+    <div class="title">Email</div>
+    <p class="meta">Write to us</p>
+  </a>
+  <a class="card" style="padding:18px; text-align:center;" href="https://instagram.com/" target="_blank" rel="noopener">
+    <i class="fa-brands fa-instagram" style="font-size:30px;"></i>
+    <div class="title">Instagram</div>
+    <p class="meta">Follow updates</p>
+  </a>
+  <a class="card" style="padding:18px; text-align:center;" href="https://t.me/" target="_blank" rel="noopener">
+    <i class="fa-brands fa-telegram" style="font-size:30px;"></i>
+    <div class="title">Telegram</div>
+    <p class="meta">Join our channel</p>
+  </a>
+</section>
+
+  </main>
+  <div class="modal" id="reviewModal" aria-hidden="true">
+    <div class="modal-card">
+      <span class="close"><i class="fa-solid fa-xmark"></i></span>
+      <h3><i class="fa-regular fa-star"></i> Reviews <small class="meta">( <span id="reviewCount">0</span> )</small></h3>
+      <form id="reviewForm" class="grid" style="grid-template-columns: 1fr 1fr; gap:12px; margin:10px 0;">
+        <input id="revName" type="text" placeholder="Your name" required>
+        <input id="revEmail" type="email" placeholder="Your email" required>
+        <div class="stars" style="grid-column: 1 / -1;">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <textarea id="revComment" rows="3" placeholder="Write your review..." required style="grid-column: 1 / -1;"></textarea>
+        <button class="btn" type="submit" style="grid-column: 1 / -1;"><i class="fa-solid fa-paper-plane"></i> Submit Review</button>
+      </form>
+      <div class="reviews" id="reviewList"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="yr"></span> Cartophoria • Built with HTML, CSS & JS only • No cart/checkout.</div>
+    </div>
+    <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>
