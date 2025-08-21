@@ -1,0 +1,140 @@
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg: #0B0F1A;
+  --surface: #12172A;
+  --muted: #1b2240;
+  --text: #E6E9F5;
+  --subtle: #A8B0D3;
+  --brand1: #7C3AED;
+  --brand2: #DB2777;
+  --brand3: #22D3EE;
+  --accent: #F59E0B;
+  --success: #10B981;
+  --danger: #EF4444;
+  --card: #0f152a;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.light {
+  --bg: #f7f8ff;
+  --surface: #ffffff;
+  --muted: #e8ebff;
+  --text: #0B0F1A;
+  --subtle: #48506b;
+  --card: #ffffff;
+  --shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { width: min(1200px, 92%); margin: 0 auto; }
+
+/* Header */
+.header {
+  position: sticky; top:0; z-index: 50;
+  background: linear-gradient(90deg, var(--surface), var(--muted));
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow);
+}
+.header-inner { display: grid; grid-template-columns: 180px 1fr auto; gap: 16px; align-items: center; padding: 12px 0; }
+.logo { display:flex; align-items:center; gap:10px; }
+.logo img { height:44px; }
+.logo-title { font-weight:700; letter-spacing: 0.5px; }
+
+.nav { display:flex; gap: 14px; align-items:center; justify-content:center; }
+.nav a {
+  padding: 10px 14px; border-radius: 14px; font-weight:600;
+  transition: transform .2s ease, background .2s ease;
+}
+.nav a:hover { transform: translateY(-1px); background: rgba(255,255,255,0.08); }
+.search { display:flex; gap:10px; align-items:center; justify-content:flex-end; }
+.search input {
+  padding: 10px 14px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.16);
+  background: var(--card); color: var(--text); width: min(360px, 100%);
+}
+.icon-btn {
+  border:none; background: var(--card); padding: 10px 12px; border-radius: 12px; cursor:pointer;
+  box-shadow: var(--shadow); transition: transform .15s ease, opacity .15s ease;
+}
+.icon-btn:active { transform: scale(0.96); opacity: .9; }
+
+/* Hero */
+.hero { padding: 28px 0 10px; }
+.badge {
+  display:inline-block; padding: 6px 12px; border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand1), var(--brand2), var(--accent)); color:#fff; font-size: 12px; font-weight: 700; letter-spacing: .6px;
+}
+.hero h1 { margin: 10px 0 8px; font-size: clamp(28px, 4vw, 44px); }
+.hero p { color: var(--subtle); margin: 0 0 14px; }
+
+/* Layout */
+.grid { display:grid; gap: 18px; }
+.products { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.sidebar-layout { grid-template-columns: 260px 1fr; }
+@media (max-width: 900px) {
+  .header-inner { grid-template-columns: 1fr; gap: 8px; }
+  .search { justify-content: flex-start; }
+  .sidebar-layout { grid-template-columns: 1fr; }
+}
+
+/* Card */
+.card {
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px; overflow: hidden; box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.14); }
+.card .media { aspect-ratio: 4/3; background: #10162c; }
+.card .body { padding: 14px; }
+.card .title { font-weight: 700; font-size: 16px; margin: 6px 0; }
+.price-row { display:flex; align-items:center; gap: 10px; margin: 6px 0 8px; }
+.price { font-weight: 700; }
+.mrp { color: var(--subtle); text-decoration: line-through; font-size: 14px; }
+.badge-off { background: #10B98122; border: 1px solid #10B98155; color: #10B981; font-weight: 700; padding: 4px 8px; border-radius: 10px; font-size: 12px; }
+
+.rating { display:flex; gap: 2px; color: #F59E0B; font-size: 14px; }
+.meta { color: var(--subtle); font-size: 13px; }
+.card .actions { display:flex; gap: 10px; margin-top: 10px; }
+.btn {
+  padding: 10px 12px; border-radius: 12px; border:none; cursor:pointer; font-weight:700;
+  background: linear-gradient(90deg, var(--brand1), var(--brand2)); color:#fff; flex: 1;
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn.secondary { background: var(--muted); color: var(--text); }
+.btn:active { transform: scale(0.98); filter: brightness(0.95); }
+
+/* Sidebar filters */
+.sidebar { position: sticky; top: 92px; background: var(--surface); border:1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 16px; height: fit-content; }
+.sidebar h3 { margin-top: 8px; }
+.filter-group { margin: 10px 0; }
+.filter-group label { display:block; margin: 6px 0; font-size: 14px; }
+.range { width: 100%; }
+
+/* Review modal */
+.modal { position: fixed; inset: 0; display:none; align-items:center; justify-content:center; background: rgba(0,0,0,0.55); z-index: 100; }
+.modal.active { display:flex; }
+.modal-card { background: var(--surface); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 16px; width: min(560px, 92%); box-shadow: var(--shadow); }
+.modal-card h3 { margin: 0 0 10px; }
+.modal-card textarea, .modal-card input[type="text"], .modal-card input[type="email"] {
+  width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.16); background: var(--card); color: var(--text);
+}
+.stars { display:flex; gap: 6px; font-size: 20px; cursor: pointer; color: #F59E0B; }
+.reviews { margin-top: 12px; display: grid; gap: 10px; }
+.review { padding: 10px 12px; background: var(--card); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+.close { float: right; cursor: pointer; opacity: .8; }
+
+/* Footer */
+.footer { margin-top: 40px; padding: 26px 0; border-top: 1px solid rgba(255,255,255,0.08); color: var(--subtle); }
+
+/* Page transition */
+.fade-in { animation: fadeIn .45s ease both; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px)} to { opacity: 1; transform: none } }
+
+/* Fancy icon size tweaks */
+i { vertical-align: middle; }
