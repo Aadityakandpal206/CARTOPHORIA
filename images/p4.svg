@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="640" height="480" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" rx="28" fill="url(#g)"/>
+  <g transform="translate(40,40)">
+    <rect x="0" y="0" width="560" height="360" rx="22" fill="rgba(0,0,0,0.15)"/>
+    <text x="20" y="60" font-family="Poppins, Arial" font-size="38" font-weight="700" fill="#0b0f1a">Gaming Laptop G15</text>
+    <text x="20" y="110" font-family="Poppins, Arial" font-size="18" fill="#0b0f1a">Premium placeholder image</text>
+  </g>
+</svg>
